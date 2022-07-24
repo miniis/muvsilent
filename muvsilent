@@ -1,0 +1,37 @@
+_G.PRED = 0.0345
+
+local Aiming = 
+local AimingChecks = Aiming.Checks
+local AimingSelected = Aiming.Selected
+local AimLockSettings = Aiming.AimLock
+
+Aiming.Settings.FOVSettings.Scale = 30 -- fov
+Aiming.ShowCredits = false
+Aiming.HitChance = 70 -- Hitchance
+Aiming.Settings.FOVSettings.Enabled = false
+Aiming.Settings.TracerSettings.Enabled = false
+Aiming.UpdateFOV()
+Aiming.TargetParts = {"Head","UpperTorso","LowerTorso","RightUpperLeg","LeftUpperLeg","LeftLowerLeg","RightLowerLeg","RightFoot","LeftFoot"}
+Aiming.UpdateTracer()
+Aiming.AimLock.Enabled = false
+
+-- // Services
+local Workspace = game:GetService("Workspace")
+
+-- // Vars
+local CurrentCamera = Workspace.CurrentCamera
+
+local DaHoodSettings = {
+    Prediction = 0.11567724521,
+
+    SilentAim = true,
+
+    AimLock = AimLockSettings,
+    BeizerLock = {
+        Smoothness = 0.05,
+        CurvePoints = {
+            Vector2.new(0.83, 0),
+            Vector2.new(0.17, 1)
+        }
+    }
+}
